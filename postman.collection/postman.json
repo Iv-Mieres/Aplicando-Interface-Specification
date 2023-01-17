@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "27443c4e-444c-4391-a7db-450be197c794",
+		"name": "Aplicando interface Specification",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Persona",
+			"item": [
+				{
+					"name": "Crear Personas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"nombre\" : \"prueba\",\r\n\"apellido\": \"probando\",\r\n\"dni\" : \"1200000\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/personas/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de Personas con Filtros",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"dni\" : null,\r\n\"nombre\" : \"muestra1\",\r\n\"apellido\" : null,\r\n\"nombreProvincia\" : \"provincia1\"\r\n\r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/personas/ver_todas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas",
+								"ver_todas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Personas por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/personas/eliminar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas",
+								"eliminar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Provincia",
+			"item": [
+				{
+					"name": "Crear Provincias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreProvincia\" : \"Provincia3\",\r\n    \"localidad\" :\"localidad3\",\r\n    \"domicilio\" :\"domicilio6\",\r\n    \"numeroCalle\":111,\r\n    \"codigoPostal\":1855\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/provincias/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"provincias",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Provincia por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/provincias/eliminar/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"provincias",
+								"eliminar",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de Provincias con Filtros",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"domicilio\" : null,\r\n\"numeroCalle\" : null,\r\n\"codigoPostal\" : null\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/provincias/ver_todas?page=0&size=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"provincias",
+								"ver_todas"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
